@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Моя первая страница</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Основная страница</a>
+            <a href="projects.html">Страница с проектами</a>
+            <a href="about.html">О нас</a>
+        </nav>
+        <header><!--Первая начальная секция сайта-->   
+            <h1>Ансар</h1>
+            <p>Мне <strong>14</strong> лет, я учусь в <em>НИШ</em></p>
+        </header>
+        
+        <main><!--Основная секция-->
+            <section id="hobbies-section"><!-- -->
+                <h2>Хобби:</h2>
+                <ul>
+                    <li><span>Кубик</span> рубика</li>
+                    <li>Баскетбол
+                        <ol>
+                            <li>Командная Игра</li>
+                            <li>Физическая подготовка</li>
+                        </ol>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <a href="https://www.google.kz/?hl=ru">Мой любимый поисковик</a>
+                <br>
+                <img src="images/Dababy.jpg" alt="Dababy" width="300">
+                <h2>Мои любимые книги</h2>
+                <table border="1">
+                    <tr>
+                        <th>Название</th>
+                        <th>Автор</th>
+                        <th>Год</th>
+                    </tr>
+                    <tr>
+                        <td>Пятнадцатилетний Капитан</td>
+                        <td>Жюль Верн</td>
+                        <td>1878</td>
+                    </tr>
+                    <tr>
+                        <td>Гарри Поттер и Кубок Огня</td>
+                        <td>Джоан Роулинг</td>
+                        <td>2000</td>
+                    </tr>
+                    <tr>
+                        <td>Маленький Принц</td>
+                        <td>Антуан Де-Сент Экзюпери</td>
+                        <td>1943</td>
+                    </tr>
+                </table>
+            </section> 
+            <br>  
+            <section>
+                <audio controls>
+                    <source src="audio/nature.mp3" type="audio/mpeg">
+                    Ваш браузер не поддерживает элемент <code>audio</code>
+                </audio>
+                <br>
+                <video controls width="600">
+                    <source src="video/nature.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает элемент <code>video</code>.
+                </video>
+                <figure>
+                    <img src="images/Dababy.jpg" alt="Dababy car">
+                    <figcaption>Dababy car</figcaption>
+                </figure>
+                <br>
+                <canvas id="myCanvas" width="400" height="200"></canvas>
+                <script>
+                    var canvas = document.getElementById('myCanvas');
+                    var context = canvas.getContext('2d');
+                    context.fillStyle = 'blue';
+                    context.fillRect(50, 50, 300, 100);
+                </script>
+            </section>        
+        </main>
+
+        <footer><!--Подвал сайта с контактной формой-->
+            <h2>Контактная форма</h2>
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name">
+            <br>
+
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email">
+            <br>
+
+            <label for="message">Сообщение:</label>
+            <textarea name="message" id="message"></textarea>
+            <br>
+            <button type="submit">Отправить</button>
+        </footer>
+
+    </body>
+</html>
