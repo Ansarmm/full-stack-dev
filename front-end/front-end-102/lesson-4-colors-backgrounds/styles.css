@@ -1,0 +1,21 @@
+.div1 {
+    color: #ff7205;
+}
+
+.div2 {
+    color: rgb(12, 109, 89);
+}
+
+.div3 {
+    color: hsl(1, 80%, 40%);
+}
+
+.bg1 {
+    background-image: url('images/lorem-picture.jpeg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: blue;
+    background-size: 50%;
+    width: 800px;
+    height: 600px;
+}
