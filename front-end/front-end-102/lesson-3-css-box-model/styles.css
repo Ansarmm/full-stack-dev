@@ -1,0 +1,17 @@
+.div1 {
+    width: 600px;
+    margin: 12px;
+    border: 7px solid blue;
+    background-color: aquamarine;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.div2 {
+    width: 600px;
+    margin: 12px;
+    background-color: aquamarine;
+    border: 7px solid blue;
+    padding: 5px;
+    box-sizing: content-box;
+}
