@@ -1,0 +1,27 @@
+.body {
+    position: static;
+}
+.menu {
+    background-color: lightblue;
+    position: fixed;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    font-size: 25px;
+    top: 0;
+    left: 0;
+}
+
+.panel {
+    position: absolute;
+    font-size: 20px;
+    top: 1500px;
+    right: 20px;
+    bottom: 10px;
+}
+
+.content {
+    position: relative;
+    top: 120px;
+    left: 30px;
+}
