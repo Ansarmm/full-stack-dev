@@ -1,0 +1,106 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+.header {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.page {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: lightblue;
+    padding: 12px;
+    height: 100%;
+    position: fixed;
+    order: 1;
+    flex-grow: 1;
+    flex-basis: 250px;
+}
+
+.menu-container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.menu-element-two {
+    order: 2
+}
+.menu-element-three {
+    order: 0
+}
+.menu-element-four {
+    order: 1
+}
+.menu-element-five {
+    order: 3
+}
+
+.content {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 15px;
+    margin-left: 200px;
+    margin-top: 20px;
+    order: 2;
+}
+
+.main-content {
+    display: flex;
+    flex-flow: column wrap;
+    flex-basis: 500px;
+}
+
+.tasks-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.first {
+    display: flex;
+    justify-content: space-between;
+}
+
+.one {
+    order: 5;
+}
+
+.two {
+    order: 4;
+}
+
+.three {
+    order: 3;
+}
+
+.four {
+    order: 2;
+}
+
+.five {
+    order: 1;
+}
+
+.second {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.third {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
