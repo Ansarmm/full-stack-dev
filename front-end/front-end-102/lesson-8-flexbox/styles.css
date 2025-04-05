@@ -1,0 +1,70 @@
+.flex-container {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+}
+
+.flex-element {
+    width: 100px;
+    height: 100px;
+}
+
+.flex-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-basis: 0;
+}
+
+.one {
+    background-color: lightcyan;
+}
+
+.two {
+    background-color: lightgoldenrodyellow;
+}
+
+.three {
+    background-color: lightgrey;
+}
+
+.four {
+    background-color: lightgreen;
+}
+
+.five {
+    background-color: lightsalmon;
+}
+
+.six {
+    background-color: lightslategray;
+}
+
+.seven {
+    background-color: lightseagreen;
+}
+
+.eight {
+    background-color: lightskyblue;
+}
+
+.nine {
+    background-color: lightpink;
+}
+
+.ten {
+    background-color: lightcoral;
+}
+
+.list-1 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.list-2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
