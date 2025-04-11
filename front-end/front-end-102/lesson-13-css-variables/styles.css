@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #3E48B7;
+    --secondary-color: #8B91D6;
+    --main-bg-color: lightgray;
+    --text-color: black;
+}
+
+.dark-theme {
+    --primary-color: gray;
+    --secondary-color: blue;
+    --main-bg-color: #584CB0;
+    --text-color: white;
+}
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.par {
+    font-size: 18px;
+    background-color: var(--secondary-color);
+    padding: 5px 12px;
+}
+
+.button {
+    padding: 10px 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}

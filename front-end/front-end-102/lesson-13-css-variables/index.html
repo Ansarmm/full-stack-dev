@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 13</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h3 class="header">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, alias eveniet. Similique.</h3>
+    <p class="par">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum voluptatum, doloribus dignissimos fuga eos sunt odit officiis quidem, facilis iusto doloremque totam corrupti enim sed esse neque saepe consequuntur. Nulla?</p>
+    <button id="dark" class="button">Dark Theme</button>
+
+    <script>
+        const darktoggle = document.getElementById('dark')
+
+        darktoggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark-theme')
+        })
+    </script>
+</body>
+</html>
