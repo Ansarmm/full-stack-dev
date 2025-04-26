@@ -1,0 +1,91 @@
+/* Переменные */
+:root {
+    --main-x-button-padding: 45px;
+    --main-y-button-padding: 15px;
+    --main-button-font-size: 18px;
+    --main-button-border-radius: 10px;
+    --main-blue-color: #1F91DC;
+    --main-white-color: #F5F5F5;
+    --secondary-blue-color: #3F51B5;
+    --main-gray-color: #555555;
+}
+/* Общие стили */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Общие стили страницы */
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Шапка страницы */
+.header {
+    background-color: var(--main-blue-color);
+    color: var(--main-white-color);
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Основное содержимое */
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    margin: 10px;
+    gap: 8px;
+}
+
+/* Элементы Грида */
+.grid-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Заголовки карточек */
+.card-title {
+    font-size: 25px;
+    background-color: var(--secondary-blue-color);
+    color: var(--main-white-color);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 8px;
+}
+
+/* Текст внутри карточек */
+.card-description {
+    color: var(--main-gray-color);
+}
+
+/* Кнопки */
+.button {
+    margin: 8px;
+    padding: var(--main-y-button-padding) var(--main-x-button-padding);
+    font-size: var(--main-button-font-size);
+    border-radius: var(--main-button-border-radius);
+    background-color: var(--main-blue-color);
+    color: var(--main-white-color);
+    border: none;
+}
+/* Футер */
+.footer {
+    width: 100%;
+    text-align: center;
+    color: var(--main-white-color);
+    background-color: var(--secondary-blue-color);
+    font-size: 23px;
+    padding: 15px 0px;
+    border-radius: 0 0 10px 10px;
+}
+
