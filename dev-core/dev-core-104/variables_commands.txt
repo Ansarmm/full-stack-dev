@@ -1,0 +1,7 @@
+printenv - список всех переменных
+echo $PATH - вывести значение переменной PATH
+echo $HOME - вывести значение переменной HOME
+echo $USER - вывести значение переменной USER
+echo $SHELL - вывести значение переменной SHELL
+export MY_VAR="Tuesday" - временно создать переменную MY_VAR
+echo $MY_VAR - вывести значение переменной MY_VAR
