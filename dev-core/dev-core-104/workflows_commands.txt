@@ -1,0 +1,37 @@
+Scenario 1:
+Mkdir project - создать директорию project
+Cd project - перейти в директорию project
+Mkdir docs - создать директорию docs
+Mkdir src - создать директорию src
+Mkdir tests - создать директорию tests
+Cd docs - перейти в директорию docs
+Touch readme.txt - создать файл readme.txt
+Echo "Project Documentation" >> readme.txt - написать в файл readme.txt строку: "Project Documentation"
+Cd .. - перейти на уровень выше
+Cd src - перейти в директорию src
+Touch main.py - создать файл main.py
+Cd .. - перейти на уровень выше
+mv docs/readme.txt src - переместить файл readme.txt из директории docs в директорию src
+Cd .. - перейти на уровень выше
+Ls -r project - вывести рекурсивно всё содержимое директории project
+Cd project - перейти в директорию project
+touch project_structure.txt - создать файл project_structure.txt
+echo "tests src   docs" >> project_structure.txt - написать в файл project_structure.txt "tests src   docs"
+
+Scenario 2:
+Touch log.txt - создать файл log.txt
+echo "line 1" >> log.txt - написать в файл "line 1"
+echo "error" >> log.txt - написать в файл "error"
+echo "line 3" >> log.txt - написать в файл "line 3"
+echo "error" >> log.txt - написать в файл "error"
+echo "line 5" >> log.txt - написать в файл "line 5"
+echo "line 6" >> log.txt - написать в файл "line 6"
+echo "error" >> log.txt - написать в файл "error"
+echo "line 8" >> log.txt - написать в файл "line 8"
+echo "line 9" >> log.txt - написать в файл "line 9"
+echo "line 10" >> log.txt - написать в файл "line 10"
+Grep "error" log.txt - вывести все строки с "error"
+wc -l log.txt - посчитать количество строк в файле log.txt
+find . -maxdepth 1 -type f -name '*.txt' - -maxdepth глубина (1 уровень директории) -type f тип (файлы) -name *.txt по расширению
+Touch txt_files_list.txt - создать файл txt_files_list.txt
+echo "./log.txt" >> txt_files_list.txt - написать в файл txt_files_list.txt все файлы с расширением .txt 
