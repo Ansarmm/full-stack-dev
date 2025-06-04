@@ -1,0 +1,24 @@
+cd ~
+mkdir project
+cd project
+mkdir docs
+mkdir src
+mkdir data
+mkdir logs
+touch docs/readme.txt
+echo "Dev-core-104 final project" > docs/readme.txt
+touch src/script.sh
+echo '#!/bin/zsh' > src/script.sh
+echo 'echo "Simple script"' >> src/script.sh
+chmod +x src/script.sh
+touch data/info.txt
+echo "Today is a good day" >> data/info.txt
+echo "The day is good today" >> data/info.txt
+echo "It is a good day today" >> data/info.txt
+touch logs/output.log
+cat docs/readme.txt
+cat data/info.txt
+grep "day" data/info.txt
+./src/script.sh
+./src/script.sh > logs/output.log
+cat logs/output.log
