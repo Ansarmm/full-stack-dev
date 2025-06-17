@@ -1,0 +1,31 @@
+dig:
+
+; <<>> DiG 9.10.6 <<>> aissayev.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 47413
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;aissayev.com.			IN	A
+
+;; ANSWER SECTION:
+aissayev.com.		300	IN	A	162.255.119.240
+
+;; Query time: 22 msec
+;; SERVER: 2600:1700:130:7850::1#53(2600:1700:130:7850::1)
+;; WHEN: Tue Jun 17 16:20:47 CDT 2025
+;; MSG SIZE  rcvd: 57
+
+
+
+nslookup:
+
+Server:		2600:1700:130:7850::1
+Address:	2600:1700:130:7850::1#53
+
+Non-authoritative answer:
+Name:	aissayev.com
+Address: 162.255.119.240
