@@ -1,0 +1,15 @@
+cd var/www/my_website 
+sudo vim index.html 
+touch about.html
+sudo vim about.html
+touch projects.html
+sudo vim projects.html
+sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx
+sudo apt install ufw
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow 22
+sudo ufw default deny incoming
+sudo ufw enable
+sudo ufw status
