@@ -1,0 +1,9 @@
+Использованные команды:
+
+sudo apt install ufw
+sudo ufw enable
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow from 167.99.252.175 to any port 22
+sudo ufw default deny incoming
+sudo ufw status
