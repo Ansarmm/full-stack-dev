@@ -1,1 +1,1 @@
-# skool
+# Full stack
