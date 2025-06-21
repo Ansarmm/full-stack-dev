@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form class="contact-form" id="contactForm">
+    <div class="form-input">
+        <label for="name">Имя</label>
+        <input type="text" id="name" name="name" class="input">
+    </div>
+    <div class="form-input">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" class="input">
+    </div>
+    <div class="form-input">
+        <label for="message">Ваше сообщение</label>
+        <textarea id="message" name="message" class="input"></textarea>
+    </div>
+    <button class="button" type="submit">Отправить</button>
+</form>
+
+<p id="formFeedback" style="display: none;"></p>
+    <script src="script.js"></script>
+</body>
+</html>

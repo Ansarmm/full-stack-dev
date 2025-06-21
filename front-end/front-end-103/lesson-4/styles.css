@@ -1,0 +1,59 @@
+.button {
+    font-size: 15px;
+    border: none;
+    background-color: #001F3F;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 14px;
+    margin: 20px 0 0 20px
+}/* Переменные */
+:root {
+    --main-color: #2563eb;  
+    --secondary-color: #38bdf8;    
+    --text-color: #1e293b;       
+    --nav-text-color: #0f172a;  
+    --main-white-color: #f8fafc;  
+    --main-bg-color: #f8fafc; 
+    --main-gray-color: #94a3b8; 
+    --main-hover-color: #173EAB; 
+}
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--main-bg-color);
+    font-family: Arial, sans-serif;
+}
+
+/* Контактная форма */
+.contact-form {
+    background-color: var(--main-white-color); 
+    color: var(--text-color); 
+    width: 50%;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 3rem 1.5rem;
+    gap: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Общие стили для вводов вместе с их заголовками */
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--main-gray-color);
+}
+
+/* Стили input`ов */
+.input {
+    border: 1px solid var(--main-gray-color);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
