@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lesson 6</title>
+    </head>
+    <body>
+        <section id="contactSection">
+            <button id="requestProjectButton">Запросить проект</button>
+
+            <form id="contactForm">
+                <h3>Свяжитесь со мной</h3>
+                <label for="contactName">Ваше имя:</label>
+                <input type="text" id="contactName" name="contactName" required>
+                <p class="error-message"></p>
+
+                <label for="contactEmail">Email:</label>
+                <input type="email" id="contactEmail" name="contactEmail" required>
+                <p class="error-message"></p>
+
+                <button type="submit">Отправить</button>
+            </form>
+
+            <!-- Форма проекта (скрыта по умолчанию) -->
+            <form id="projectRequestForm" style="display: none;">
+                <h3>Запрос на проект</h3>
+                <label for="clientName">Ваше имя:</label>
+                <input type="text" id="clientName" name="clientName" required>
+                <p class="error-message"></p>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <p class="error-message"></p>
+
+                <label for="phone">Телефон:</label>
+                <input type="text" id="phone" name="phone" required>
+                <p class="error-message"></p>
+
+                <fieldset>
+                    <legend>Тип проекта:</legend>
+                    <label><input type="radio" name="projectType" value="website"> Веб-сайт</label>
+                    <label><input type="radio" name="projectType" value="app"> Приложение</label>
+                    <label><input type="radio" name="projectType" value="ecommerce"> Интернет-магазин</label>
+                    <p class="error-message"></p>
+                </fieldset>
+
+                <label for="message">Описание проекта:</label>
+                <textarea id="message" name="message" required></textarea>
+                <p class="error-message"></p>
+
+                <button type="submit" disabled>Отправить запрос</button>
+            </form>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>
