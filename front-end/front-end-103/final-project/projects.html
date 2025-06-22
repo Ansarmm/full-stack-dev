@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navigation">
+            <a href="index.html">Обо мне</a>
+            <a href="projects.html">Проекты</a>
+            <a href="blog.html">Блог</a>
+            <a href="#contacts">Контакты</a>
+            <button class="theme-toggle" id="dark">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <section class="portfolio" id="portfolio">
+        <p class="section-title">Портфолио</p>
+        <div class="project-container">
+            <div class="project-element">
+                <p class="project-title">Калькулятор на Python</p>
+                <p class="project-text">Калькулятор который можно использовать множество раз без перезапуска программы, обрабатывающий возможные ошибки</p>
+                <button class="button">Подробнее...</button>
+            </div>
+            <div class="project-element">
+                <p class="project-title">Веб-сайт портфолио</p>
+                <p class="project-text">Многостраничный сайт без использования CSS для практики знаний HTML, в котором я использовал видео, фото и др.</p>
+                <button class="button">Подробнее...</button>
+            </div>
+            <div class="project-element">
+                <p class="project-title">Игра приключение</p>
+                <p class="project-text">Игра в командной строке с сюжетом. В этой игре ваш выбор влияет на каждый последующий, а также имеет 9 концовок</p>
+                <button class="button">Подробнее...</button>
+            </div>
+            <div class="project-element">
+                <p class="project-title">Веб-сайт с портфолио и личным блогом</p>
+                <p class="project-text">Этим проектом как раз является данный веб-сайт!</p>
+                <button class="button">Подробнее...</button>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer" id="contacts">
+        <div class="links">
+            <p class="links-title">Форма обратной связи и ссылки на социальные сети</p>
+            <div class="links-text">
+                <a href="https://github.com/Ansarmm">Github</a>
+                <p>+7 777 938 93 10</p>
+                <p>example@gmail.com</p>
+            </div>
+        </div>
+        <div class="contact-form">
+            <div class="form-input">
+                <label for="name">Имя</label>
+                <input type="text" id="name" class="input">
+            </div>
+            <div class="form-input">
+                <label for="email">Email</label>
+                <input type="text" id="email" class="input">
+            </div>
+            <div class="form-input">
+                <label for="message">Ваше сообщение</label>
+                <textarea id="message"  class="input"></textarea>
+            </div>
+            <button class="button">Отправить</button>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
