@@ -52,8 +52,8 @@ body {
 }
 
 .navigation a.active {
-  color: var(--accent); /* или любой яркий цвет */
-  border-bottom: 2px solid var(--accent);
+  color:  red;
+  border-bottom: 2px solid;
   font-weight: bold;
 }
 

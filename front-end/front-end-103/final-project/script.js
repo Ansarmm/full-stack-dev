@@ -11,9 +11,9 @@ const navLinks = document.querySelectorAll(".navigation a");
 const currentUrl = window.location.pathname;
 
 navLinks.forEach(link => {
-  const linkHref = link.getAttribute("href");
+    const linkHref = link.getAttribute("href");
 
-  if (linkHref === currentUrl || currentUrl.endsWith(linkHref)) {
+    if (linkHref === currentUrl.split("/").pop()) {
     link.classList.add("active");
-  }
+    }
 });
