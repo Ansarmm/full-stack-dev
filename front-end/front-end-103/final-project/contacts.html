@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <script>
+        // apply theme before page load
         (function () {
             const savedTheme = localStorage.getItem("theme");
             if (savedTheme === "dark") {
@@ -16,6 +17,7 @@
 </head>
 <body>
     <script>
+        // change theme button script. Used there for better otiomization. Otherwise cause page "flash" problem
         document.addEventListener("DOMContentLoaded", () => {
             const toggleBtn = document.getElementById("dark");
 
@@ -42,7 +44,7 @@
                 <a href="index.html">Обо мне</a>
                 <a href="projects.html">Проекты</a>
                 <a href="blog.html">Блог</a>
-                <a href="contacts.html">Контакты</a>
+                <a href="#contacts">Контакты</a>
                 <button class="theme-toggle" id="dark">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -51,26 +53,36 @@
                 </button>
             </div>
         </nav>
+        <div style="text-align: center">
+            <p class="section-title">Контактная форма</p>
+        </div>
     </header>
-
-
-    <section class="blog" id="blog">
-        <p class="section-title">Блог</p>
-        <div class="post1">
-            <img src="images/coding-laptop.jpg" alt="Coding laptop image">
-            <div class="post1-text">
-                <p class="blog-title">Фронтенд мне ближе, чем бэкенд</p>
-                <p class="blog-paragraph">Фронтенд мне нравится больше чем бэкенд, потому что для меня фронт понятнее. При изучении бэкенда очень часто приходится читать много документации.</p>
+    <footer class="footer" id="contacts">
+        <form class="contact-form" id="contactForm">
+            <div class="form-input">
+                <input type="text" id="clientName" class="input" placeholder="Имя" required>
+                <p class="error-message"></p>
             </div>
-        </div>
-        <div class="post2">
-            <img src="images/hospital.jpg" alt="Hospital image">
-            <div class="post2-text">
-                <p class="blog-title">Я попал в больницу</p>
-                <p class="blog-paragraph">Недавно я попал в больницу с острым аппендицитом с местным перитонитом. Из за операции и госпитализации я замедлился на 2 недели в изучении web разработки</p>
+            <div class="form-input">
+                <input type="text" id="email" class="input" placeholder="Email" required>
+                <p class="error-message"></p>
             </div>
+            <div class="form-input">
+                <input type="text" id="phone" class="input" placeholder="phone number" required>
+                <p class="error-message"></p>
+            </div>
+            <div class="form-input">
+                <textarea id="message"  class="input" placeholder="Ваше сообщение" required></textarea>
+                <p class="error-message"></p>
+            </div>
+            <div class="form-button-parent">
+                <button class="form-button"id="submit-button" disabled>Отправить</button>
+            </div>
+        </form> 
+        <div class="footer-links">
+            <a href="https://github.com/Ansarmm" target="_blank">Github</a>
         </div>
-    </section>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

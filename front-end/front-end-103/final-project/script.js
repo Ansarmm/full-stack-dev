@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   contactForm.addEventListener("input", () => {
     const allFieldsValid = validateForm();
     submitButton.disabled = !allFieldsValid;
+    localStorage.setItem("contactForm data", JSON.stringify(formData));
   });
 
   contactForm.addEventListener("submit", (event) => {
@@ -114,3 +115,50 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => successMessage.remove(), 3000);
   }
 });
+
+
+// Save form data
+
+window.addEventListener("load", () => {
+    const savedData = JSON.parse(localStorage.getItem("contactForm data"));
+
+    if (savedData) {
+        contactForm.clientName.value = savedData.name || "";
+        contactForm.email.value = savedData.email || "";
+        contactForm.phone.value = savedData.phone || "";
+        contactForm.message.value = savedData.message || "";
+    }
+});
+
+// Delete form data from page
+contactForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // Остановить стандартное поведение формы
+
+    if (validateForm()) {
+        console.log("Форма успешно отправлена!");
+        localStorage.removeItem("projectRequestData"); // Удаляем данные из localStorage
+        contactForm.reset(); // Очищаем форму
+    }
+});
+
+// debounce func decrease qunatity of requests
+function debounce(func, delay) {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func(...args), delay);
+    };
+}
+
+const saveFormData = debounce(() => {
+    const formData = {
+        name: contactForm.clientName.value,
+        email: contactForm.email.value,
+        phone: contactForm.phone.value,
+        message: contactForm.message.value,
+    };
+
+    localStorage.setItem("contactForm data", JSON.stringify(formData));
+}, 1000);
+
+contactForm.addEventListener("input", saveFormData);
