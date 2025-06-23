@@ -1,25 +1,25 @@
 /* Переменные */
 :root {
-    --main-color: #2563eb;  
-    --secondary-color: #38bdf8;    
-    --text-color: #1e293b;       
-    --nav-text-color: #0f172a;  
-    --main-white-color: #f8fafc;  
+    --main-color: #6366f1;
+    --secondary-color: #8b5cf6;
+    --text-color: #334155;
+    --nav-text-color: #1e293b;
+    --main-white-color: #ffffff;
     --main-bg-color: #f8fafc; 
-    --main-gray-color: #94a3b8; 
-    --main-hover-color: #173EAB; 
+    --main-gray-color: #64748b;
+    --main-hover-color: #4f46e5;
 }
 
 /* Стили для темной темы */
 .dark-theme {
-    --main-color: #1153E6;
-    --secondary-color: #001F3F;
-    --text-color: #F7F7F7;
-    --nav-text-color: #F7F7F7;
-    --main-white-color: #F7F7F7;
-    --main-bg-color: black;
-    --main-gray-color: #94a3b8; 
-    --main-hover-color:#173EAB; 
+    --main-color: #7c3aed; 
+    --secondary-color: #06b6d4;
+    --text-color: #e2e8f0; 
+    --nav-text-color: #f1f5f9;
+    --main-white-color: #ffffff;
+    --main-bg-color: #0f172a;
+    --main-gray-color: #94a3b8;
+    --main-hover-color: #6d28d9;
 }
 
 /* Общие стили */
@@ -45,10 +45,12 @@ body {
 
 /* Стили для навигации */
 .navigation {
+    position: sticky;
     display: flex;
     justify-content: space-around;
     color: var(--nav-text-color);
     padding: 1.5rem;
+    top: 0;
 }
 
 .navigation a.active {
@@ -132,17 +134,15 @@ a {
 
 /* Названия проектов */
 .project-title {
-    background-color: var(--main-color);
     padding: 1rem;
-    color: var(--main-white-color);
+    color: var(--main-color);
     border-radius: 1rem 1rem 0 0;
-    transition: background-color 0.3s
+    transition: background-color 0.3s;
+    font-size: 1.25rem
 }
 
 /* Стили для текста описывающего проекты */
 .project-text {
-    background-color: var(--secondary-color);
-    color: var(--main-white-color);
     padding: 1.5rem 0.5rem;
     border-radius: 0 0 1rem 1rem;
     transition: background-color 0.3s
