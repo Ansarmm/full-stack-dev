@@ -17,105 +17,100 @@ navLinks.forEach(link => {
 
 
 // Footer section scripts
-// const contactForm = document.getElementById("contactForm");
-// const projectRequestForm = document.getElementById("projectRequestForm");
+// form validation
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.getElementById("contactForm");
 
+  const nameField = document.getElementById("clientName");
+  const emailField = document.getElementById("email");
+  const phoneField = document.getElementById("phone");
+  const messageField = document.getElementById("message");
+  const submitButton = document.getElementById("submit-button");
 
-// projectRequestForm.addEventListener("input", () => {
-//     const allFieldsValid = validateForm();
-//     const submitButton = projectRequestForm.querySelector("button[type='submit']");
-//     submitButton.disabled = !allFieldsValid;
-// });
+  contactForm.addEventListener("input", () => {
+    const allFieldsValid = validateForm();
+    submitButton.disabled = !allFieldsValid;
+  });
 
-// projectRequestForm.addEventListener("submit", (event) => {
-//     event.preventDefault(); // Остановить отправку формы
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // Остановить отправку формы
 
-//     if (validateForm()) {
-//         console.log({
-//             name: projectRequestForm.clientName.value,
-//             email: projectRequestForm.email.value,
-//             phone: projectRequestForm.phone.value,
-//             projectType: projectRequestForm.querySelector("input[name='projectType']:checked")?.value || "Не указано",
-//             message: projectRequestForm.message.value,
-//         });
+    if (validateForm()) {
+      console.log({
+        name: nameField.value,
+        email: emailField.value,
+        phone: phoneField.value,
+        message: messageField.value,
+      });
 
-//         showSuccessMessage("Ваш запрос успешно отправлен!");
-//         projectRequestForm.reset(); // Очистка формы
-//         projectRequestForm.querySelector("button[type='submit']").disabled = true;
-//     }
-// });
+      showSuccessMessage("Ваш запрос успешно отправлен!");
+      contactForm.reset(); // Очистка формы
+      submitButton.disabled = true;
+    }
+  });
 
-// function validateForm() {
-//     let isValid = true;
+  function validateForm() {
+    let isValid = true;
 
-//     // Имя клиента
-//     const nameField = projectRequestForm.clientName;
-//     const namePattern = /^[A-Za-zА-Яа-я\s]+$/;
-//     if (!nameField.value.trim() || !namePattern.test(nameField.value)) {
-//         showError(nameField, "Имя должно содержать только буквы.");
-//         isValid = false;
-//     } else {
-//         clearError(nameField);
-//     }
+    const namePattern = /^[A-Za-zА-Яа-я\s]+$/;
+    if (!nameField.value.trim() || !namePattern.test(nameField.value)) {
+      showError(nameField, "Имя должно содержать только буквы.");
+      isValid = false;
+    } else {
+      clearError(nameField);
+    }
 
-//     // Email
-//     const emailField = projectRequestForm.email;
-//     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     if (!emailPattern.test(emailField.value)) {
-//         showError(emailField, "Введите корректный email.");
-//         isValid = false;
-//     } else {
-//         clearError(emailField);
-//     }
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailField.value)) {
+      showError(emailField, "Введите корректный email.");
+      isValid = false;
+    } else {
+      clearError(emailField);
+    }
 
-//     // Телефон
-//     const phoneField = projectRequestForm.phone;
-//     const phonePattern = /^\d{10,}$/;
-//     if (!phonePattern.test(phoneField.value)) {
-//         showError(phoneField, "Введите номер телефона (минимум 10 цифр).");
-//         isValid = false;
-//     } else {
-//         clearError(phoneField);
-//     }
+    const phonePattern = /^\d{10,}$/;
+    if (!phonePattern.test(phoneField.value)) {
+      showError(phoneField, "Введите номер телефона (минимум 10 цифр).");
+      isValid = false;
+    } else {
+      clearError(phoneField);
+    }
 
-//     // Тип проекта
-//     const projectType = projectRequestForm.querySelector("input[name='projectType']:checked");
-//     const projectTypeError = projectRequestForm.querySelector('fieldset .error-message')
-//     if (!projectType) {
-//         showError(projectTypeError, `Выберите тип проекта.`);
-//         isValid = false;
-//     } else {
-//         clearError(projectTypeError);
-//     }
+    if (messageField.value.trim().length < 20) {
+      showError(messageField, "Описание должно содержать минимум 20 символов.");
+      isValid = false;
+    } else {
+      clearError(messageField);
+    }
 
-//     // Сообщение
-//     const messageField = projectRequestForm.message;
-//     if (messageField.value.trim().length < 20) {
-//         showError(messageField, "Описание должно содержать минимум 20 символов.");
-//         isValid = false;
-//     } else {
-//         clearError(messageField);
-//     }
+    return isValid;
+  }
 
-//     return isValid;
-// }
+  function showError(field, message) {
+    const errorElement = field.parentElement.querySelector(".error-message");
+    if (errorElement) {
+      errorElement.innerText = message;
+      errorElement.style.color = "red";
+    }
+  }
 
-// function showError(field, message) {
-//     const errorElement = field.nextElementSibling || field.parentElement.querySelector(".error-message");
-//     errorElement.innerText = message;
-//     errorElement.style.color = "red";
-// }
+  function clearError(field) {
+    const errorElement = field.parentElement.querySelector(".error-message");
+    if (errorElement) {
+      errorElement.innerText = "";
+    }
+  }
 
-// function clearError(field) {
-//     const errorElement = field.nextElementSibling || field.parentElement.querySelector(".error-message");
-//     errorElement.innerText = "";
-// }
+  function showSuccessMessage(message) {
+    const existingMessage = document.getElementById("success-message");
+    if (existingMessage) existingMessage.remove();
 
-// function showSuccessMessage(message) {
-//     const successMessage = document.createElement("p");
-//     successMessage.innerText = message;
-//     successMessage.style.color = "green";
-//     projectRequestForm.appendChild(successMessage);
+    const successMessage = document.createElement("p");
+    successMessage.id = "success-message";
+    successMessage.innerText = message;
+    successMessage.style.color = "green";
+    contactForm.appendChild(successMessage);
 
-//     setTimeout(() => successMessage.remove(), 3000);
-// }
+    setTimeout(() => successMessage.remove(), 3000);
+  }
+});

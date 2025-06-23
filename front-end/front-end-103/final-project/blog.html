@@ -73,20 +73,27 @@
     </section>
 
     <footer class="footer" id="contacts">
-        <div class="contact-form">
+        <form class="contact-form" id="contactForm">
             <div class="form-input">
-                <input type="text" id="name" class="input" placeholder="Имя">
+                <input type="text" id="clientName" class="input" placeholder="Имя" required>
+                <p class="error-message"></p>
             </div>
             <div class="form-input">
-                <input type="text" id="email" class="input" placeholder="Email">
+                <input type="text" id="email" class="input" placeholder="Email" required>
+                <p class="error-message"></p>
             </div>
             <div class="form-input">
-                <textarea id="message"  class="input" placeholder="Ваше сообщение"></textarea>
+                <input type="text" id="phone" class="input" placeholder="phone number" required>
+                <p class="error-message"></p>
+            </div>
+            <div class="form-input">
+                <textarea id="message"  class="input" placeholder="Ваше сообщение" required></textarea>
+                <p class="error-message"></p>
             </div>
             <div class="form-button-parent">
-                <button class="form-button">Отправить</button>
+                <button class="form-button"id="submit-button" disabled>Отправить</button>
             </div>
-        </div> 
+        </form> 
     </footer>
     <script src="script.js"></script>
 </body>

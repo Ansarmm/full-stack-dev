@@ -335,6 +335,13 @@ img {
     cursor: pointer;
 }
 
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
 .form-button:hover {
     background-color: var(--main-hover-color); 
 }
