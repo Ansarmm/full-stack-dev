@@ -1,55 +1,31 @@
-// Scripts for navigation:
-//dark-theme
-
-
 // Highlight current page
 const navLinks = document.querySelectorAll(".navigation a"); 
 const currentUrl = window.location.pathname;
-
 navLinks.forEach(link => {
-    const linkHref = link.getAttribute("href");
-
-    if (linkHref === currentUrl.split("/").pop()) {
+  const linkHref = link.getAttribute("href");
+  if (linkHref === currentUrl.split("/").pop()) {
     link.classList.add("active");
-    }
+  }
 });
 
-
-
-// Footer section scripts
-// form validation
 document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("contactForm");
-
   const nameField = document.getElementById("clientName");
   const emailField = document.getElementById("email");
   const phoneField = document.getElementById("phone");
   const messageField = document.getElementById("message");
   const submitButton = document.getElementById("submit-button");
 
-  contactForm.addEventListener("input", () => {
-    const allFieldsValid = validateForm();
-    submitButton.disabled = !allFieldsValid;
-    localStorage.setItem("contactForm data", JSON.stringify(formData));
-  });
+  // Загрузка сохранённых данных
+  const savedData = JSON.parse(localStorage.getItem("contactForm data"));
+  if (savedData) {
+    nameField.value = savedData.name || "";
+    emailField.value = savedData.email || "";
+    phoneField.value = savedData.phone || "";
+    messageField.value = savedData.message || "";
+  }
 
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // Остановить отправку формы
-
-    if (validateForm()) {
-      console.log({
-        name: nameField.value,
-        email: emailField.value,
-        phone: phoneField.value,
-        message: messageField.value,
-      });
-
-      showSuccessMessage("Ваш запрос успешно отправлен!");
-      contactForm.reset(); // Очистка формы
-      submitButton.disabled = true;
-    }
-  });
-
+  // Валидация формы
   function validateForm() {
     let isValid = true;
 
@@ -114,51 +90,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => successMessage.remove(), 3000);
   }
-});
 
-
-// Save form data
-
-window.addEventListener("load", () => {
-    const savedData = JSON.parse(localStorage.getItem("contactForm data"));
-
-    if (savedData) {
-        contactForm.clientName.value = savedData.name || "";
-        contactForm.email.value = savedData.email || "";
-        contactForm.phone.value = savedData.phone || "";
-        contactForm.message.value = savedData.message || "";
-    }
-});
-
-// Delete form data from page
-contactForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // Остановить стандартное поведение формы
-
-    if (validateForm()) {
-        console.log("Форма успешно отправлена!");
-        localStorage.removeItem("projectRequestData"); // Удаляем данные из localStorage
-        contactForm.reset(); // Очищаем форму
-    }
-});
-
-// debounce func decrease qunatity of requests
-function debounce(func, delay) {
+  // Сохраняем в localStorage (debounced)
+  function debounce(func, delay) {
     let timeout;
     return (...args) => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func(...args), delay);
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), delay);
     };
-}
+  }
 
-const saveFormData = debounce(() => {
+  const saveFormData = debounce(() => {
     const formData = {
-        name: contactForm.clientName.value,
-        email: contactForm.email.value,
-        phone: contactForm.phone.value,
-        message: contactForm.message.value,
+      name: nameField.value.trim(),
+      email: emailField.value.trim(),
+      phone: phoneField.value.trim(),
+      message: messageField.value.trim(),
+    };
+    localStorage.setItem("contactForm data", JSON.stringify(formData));
+  }, 1000);
+
+  contactForm.addEventListener("input", () => {
+    const allValid = validateForm();
+    submitButton.disabled = !allValid;
+    saveFormData(); // вызывается debounced
+  });
+
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!validateForm()) return;
+
+    const contactData = {
+      name: nameField.value.trim(),
+      email: emailField.value.trim(),
+      phone: phoneField.value.trim(),
+      message: messageField.value.trim(),
     };
 
-    localStorage.setItem("contactForm data", JSON.stringify(formData));
-}, 1000);
-
-contactForm.addEventListener("input", saveFormData);
+    fetch("http://127.0.0.1:8000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(contactData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Ошибка отправки запроса");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Ответ сервера:", data);
+        showSuccessMessage("Ваш запрос успешно отправлен!");
+        contactForm.reset();
+        localStorage.removeItem("contactForm data");
+        submitButton.disabled = true;
+      })
+      .catch((error) => {
+        console.error("Ошибка:", error);
+      });
+  });
+});
