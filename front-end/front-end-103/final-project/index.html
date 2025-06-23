@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        // apply theme before page load
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "dark") {
+            document.documentElement.classList.add("dark-theme");
+            }
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script>
+        // change theme button script. Used there for better otiomization. Otherwise cause page "flash" problem
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggleBtn = document.getElementById("dark");
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener("click", () => {
+                const isDark = document.documentElement.classList.contains("dark-theme");
+                setTheme(isDark ? "light" : "dark");
+                });
+            }
+
+            function setTheme(theme) {
+                if (theme === "dark") {
+                document.documentElement.classList.add("dark-theme");
+                } else {
+                document.documentElement.classList.remove("dark-theme");
+                }
+                localStorage.setItem("theme", theme);
+            }
+            });
+    </script>
     <header class="header">
         <nav class="navigation">
             <div class="links-button">
@@ -60,7 +91,7 @@
                 <textarea id="message"  class="input" placeholder="Ваше сообщение"></textarea>
             </div>
             <div class="form-button-parent">
-                <button class="form-button">Отправить</button>
+                <button class="form-button" id="submit-button">Отправить</button>
             </div>
         </div> 
     </footer>
