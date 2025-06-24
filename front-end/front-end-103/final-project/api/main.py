@@ -21,6 +21,7 @@ app.add_middleware(
 )
 
 DATA_FILE = "data.json"
+PROJECTS_FILE = "projects.json"
 
 def read_data():
     try:
@@ -48,3 +49,8 @@ async def receive_contact(form: ContactForm):
 @app.get("/api/contact")
 def get_contacts():
     return contacts
+
+@app.get("/api/projects")
+def get_projects():
+    with open(PROJECTS_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
