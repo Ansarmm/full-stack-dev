@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function loadProjects() {
       projectsContainer.innerHTML = "<p>Загрузка проектов...</p>";
 
-      fetch("http://127.0.0.1:8000/api/projects")
+      fetch("https://127.0.0.1:8000/api/projects")
         .then((response) => {
           if (!response.ok) {
             throw new Error("Ошибка загрузки проектов");
