@@ -1,0 +1,28 @@
+---
+const { title } = Astro.props;
+import "../output.css"
+---
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{title}</title>
+</head>
+<body>
+    <header>
+        <nav class="bg-blue-500 text-white p-6 font-bold">
+            <a href="/">Главная</a> |
+            <a href="/about">Обо мне</a> |
+            <a href="/portfolio">Портфолио</a>
+        </nav>
+    </header>
+
+    <main>
+        <slot />
+    </main>
+
+    <footer class="text-gray font-thin mt-4 pl-2">
+        <p>© 2024 Мой сайт</p>
+    </footer>
+</body>
+</html>
