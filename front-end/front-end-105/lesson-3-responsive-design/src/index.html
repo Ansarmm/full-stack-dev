@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="bg-white shadow">
+        <!-- Контейнер -->
+            <div class="max-w-7xl mx-auto px-4">
+                <!-- Навигация -->
+                <div class="flex justify-between h-16">
+                <!-- Логотип -->
+                    <div class="flex items-center">
+                        <span class="text-xl font-bold">Logo</span>
+                    </div>
+
+                    <!-- Мобильное меню (видимо только на малых экранах) -->
+                    <div class="md:hidden">
+                        <button class="p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="flex flex-1 overflow-hidden bg-white">
+        <!-- Боковая панель -->
+        <aside class="hidden md:flex w-60 bg-gray-100 p-4 overflow-y-auto h-screen">
+            <ul class="space-y-2">
+                <li><a href="#" class="block hover:text-blue-600">Главная</a></li>
+                <li><a href="#" class="block hover:text-blue-600">Профиль</a></li>
+                <li><a href="#" class="block hover:text-blue-600">Настройки</a></li>
+            </ul>
+        </aside>
+        <main class="w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2 mt-6">
+                <!-- Карточки -->
+                <div class="bg-white p-4 rounded shadow">Карточка 1</div>
+                <div class="bg-white p-4 rounded shadow">Карточка 2</div>
+                <div class="bg-white p-4 rounded shadow">Карточка 3</div>
+                <div class="bg-white p-4 rounded shadow">Карточка 4</div>
+            </div>
+        </main>
+    </div>
+    <footer class="mt-10">
+        <p class="text-center text-2xl">Контактная форма</p>
+        <form class="flex flex-col items-center justify-center py-10 space-y-6">
+            <div class="mb-4">
+                <input type="text" placeholder="Ваше имя" class="p-2 border-1 border-solid rounded-lg w-64 sm:w-80 md:w-96">
+            </div>
+            <div class="mb-4">
+                <input type="text" placeholder="Email" class="p-2 border-1 border-solid rounded-lg w-64 sm:w-80 md:w-96">
+            </div>
+            <textarea placeholder="Ваше сообщение" class="p-2 border-1 border-solid rounded-lg w-64 sm:w-80 md:w-96"></textarea>
+        </form>
+    </footer>
+</body>
+</html>
