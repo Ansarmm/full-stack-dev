@@ -1,0 +1,29 @@
+@import "tailwindcss";  
+
+@theme {
+    --color-brand-blue: #1e6091;
+    --color-brand-purple: #8338ec;
+    --spacing-4: 1rem;
+
+    --screen-tablet: 640px;
+    --screen-laptop: 1024px;
+    --screen-desktop: 1280px;
+    --screen-wide: 1536px;
+}
+
+.custom-gradient {
+    background: linear-gradient(
+        135deg,
+        var(--color-brand-blue),
+        var(--color-brand-purple)
+    );
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(var(--spacing-4)); }
+}
+
+.floating-animation {
+    animation: float 2s ease-in-out infinite;
+}
