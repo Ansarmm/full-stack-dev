@@ -1,4 +1,4 @@
-Welcome to .txt file about Hackorda 
+Welcome to .txt file about projects
 
 Project is a platform that will allow to students participate and create teams. (Hackorda)
 
