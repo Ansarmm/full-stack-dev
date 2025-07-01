@@ -1,1 +1,3 @@
 Welcome to .txt file about projects
+
+Project about hackatons. A platform that will allow to students participate in hackatons and create teams. Hackorda.
