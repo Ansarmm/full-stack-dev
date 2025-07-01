@@ -1,0 +1,7 @@
+Welcome to .txt file about Hackorda 
+
+Project is a platform that will allow to students participate and create teams. (Hackorda)
+
+Main goals of this project: 
+- create convenient platform
+- manage hackatons
