@@ -33,3 +33,16 @@ git commit -m "Add If We Have Each Other by Alec Benjamin"
 git add music-library.txt
 git commit -m "Add Match In The Rain by Alec Benjamin"
 ```
+---
+>Забыл добавить README
+>
+```
+git add README.md
+git commit -m amend
+```
+---
+>Сделал коммит но забыл добавить файл в индекс
+>
+```
+
+```
