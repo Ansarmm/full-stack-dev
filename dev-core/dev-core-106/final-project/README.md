@@ -44,5 +44,41 @@ git commit -m amend
 >Сделал коммит но забыл добавить файл в индекс
 >
 ```
-
+git add music-library.txt
+git commit --amend --no-edit
+```
+---
+>Мне нужно сделать git pull, но я имею изменения которые хотел бы сохранить.
+>
+```
+git stash
+```
+---
+>Проверил что я сделал stash правильных данных
+>
+```
+git stash apply
+git stash
+```
+---
+>Перенести данные
+>
+```
+git pull
+git stash pop
+```
+---
+>Cherry-pick из другой ветки
+>
+```
+git checkout -b feature-branch
+git add main.py 
+git commit -m "Add main.py with welcome message"
+git add main.py
+git commit -m "Add new feature release alert"
+git add main.py
+git commit -m "Add new feature"
+git checkout final-project
+git cherry-pick 2614c7a
+git cherry-pick a69d585
 ```
