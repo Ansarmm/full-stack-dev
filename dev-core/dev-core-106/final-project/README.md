@@ -1,8 +1,25 @@
-# Финальный прооект Dev-core-106
+# Финальный прооект devcore 106
+
+>
+>
+```
+
+```
 
 ## Пошаговый путь:
+>Перейти в отдельную ветку для этого проекта
+>
+`git checkout -b final-project` 
 
-`git checkout -b final-project` - перейти в отдельную ветку для этого проекта
+>Создать первоначальную структуру проекта
+```
+git add .
+git commit -m "initial structure"
+```
 
-`git add .`
-`git commit -m "initial structure` - структура проекта
+>Добавить новую песню
+>
+```
+git add music-library.txt
+git commit -m "Add If We Have Each Other by Alec Benjamin"
+```
