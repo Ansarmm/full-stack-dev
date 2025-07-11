@@ -44,5 +44,26 @@ git commit -m amend
 >Сделал коммит но забыл добавить файл в индекс
 >
 ```
-
+git add music-library.txt
+git commit --amend --no-edit
+```
+---
+>Мне нужно сделать git pull, но я имею изменения которые хотел бы сохранить.
+>
+```
+git stash
+```
+---
+>Проверил что я сделал stash правильных данных
+>
+```
+git stash apply
+git stash
+```
+---
+>Перенести данные
+>
+```
+git pull
+git stash pop
 ```
