@@ -82,3 +82,38 @@ git checkout final-project
 git cherry-pick 2614c7a
 git cherry-pick a69d585
 ```
+---
+>Rebase 3 коммитов. Это полезно когда нужно объединить 3 изменения в 1 завершенный коммит.
+>
+```
+echo "Title: Swim | Artist: Alec Benjmain | Album: Narrated For You" >> music-library.txt
+git add music-library.txt
+git commit -m "Add Swim by Alec Benjamin"
+
+echo "Title: Older | Artist: Alec Benjamin | Album: (Un)Commentary" >> music-library.txt
+git add music-library.txt
+git commit -m "Add Older by Alec Benjamin"
+
+echo "Title: 1994 | Artist: Alec Benjamin | Album: Narrated For You" >> music-library.txt
+git add music-library.txt
+git commit -m "Add 1994 by Alec Benjamin"
+
+git rebase-i main
+```
+---
+>3 Вида git reset
+>
+* git reset --soft - отменяет коммит, но оставляет изменения в стэйдже и рабочей директории
+* git reset --mixed - отменяет коммит, убирает файлы из индекса, но оставляет изменения в рабочей директории
+* git reset --hard - коммит исчезает, все изменения удаляются
+---
+>Git revert - коммит отмены коммита
+>
+```
+git add .
+git commit -m "Add new song"
+git revert ae463cf
+```
+---
+>Git reflog позволяет видеть изменения невидимые для git log. Например процесс git rebase -i.
+>
