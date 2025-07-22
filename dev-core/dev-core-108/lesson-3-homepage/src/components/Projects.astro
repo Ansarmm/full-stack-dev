@@ -1,0 +1,28 @@
+---
+import ProjectCard from "./ProjectCard.astro"
+import Heading1 from "./Heading1.astro"
+
+const Cards = [
+    {
+        title: "API",
+        description: "Веб сайт с рабочим API, отправляющий данные с формы на сервер"
+    },
+    {
+        title: "Домен",
+        description: "Покупка домена и настройка DNS на Namecheap",
+    },
+    {
+        title: "Deployment",
+        description: "Deployment готового веб сайта на веб сервер Nginx."
+    }
+]
+---
+
+<div class="py-10 text-center bg-slate-100">
+	<Heading1 text="Проекты 3" /> 
+    <div class="grid grid-cols-3 grid-rows-auto gap-12 px-60 py-10">
+        {Cards.map((card, index) => (
+            <ProjectCard title={card.title} description={card.description} />
+        ))}
+    </div>
+</div>

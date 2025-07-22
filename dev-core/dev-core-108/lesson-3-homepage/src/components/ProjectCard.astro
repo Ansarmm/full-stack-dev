@@ -1,0 +1,10 @@
+---
+const {title, description} = Astro.props
+
+import Heading2 from "./Heading2.astro"
+---
+
+<div class="flex flex-col shadow-md gap-4 w-full bg-white p-6 rounded-xl">
+    <Heading2 text={title} />
+    <p class="text-xl font-medium text-center">{description}</p>
+</div>
