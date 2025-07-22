@@ -1,0 +1,18 @@
+---
+import Heading1 from "./Heading1.astro"
+---
+<div class="flex flex-col pt-10 pb-20 items-center gap-10">
+	<Heading1 text="Контактная форма" /> 
+    <form action="" class="flex flex-col w-120 p-8 gap-4 rounded-3xl bg-indigo-800 text-white">
+        <label for="name">Ваше имя</label>
+        <input type="text" id="name" class="bg-indigo-400 p-4 rounded-lg focus:bg-indigo-900" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" class="bg-indigo-400 p-4 rounded-lg focus:bg-indigo-900" required>
+
+        <label for="phone">Номер телефона</label>
+        <input type="tel" id="phone" class="bg-indigo-400 p-4 rounded-lg focus:bg-indigo-900" required>
+
+        <button id="submit-button" class="bg-indigo-900 hover:bg-indigo-950 px-4 py-3 rounded-lg transition duration-300">Отправить</button>
+    </form>
+</div>
